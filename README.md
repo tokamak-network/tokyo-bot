@@ -131,6 +131,19 @@ Tokyo Telegram Bot
 $ npm install
 ```
 
+For your test,
+Replace [TOKEN](https://github.com/Onther-Tech/tokyo-bot/blob/master/test.js#L4)
+
+or make config.json in root directory
+
+```
+//config.json
+{
+  "TOKEN" : "<BOT ACCESS TOKEN>"
+}
+
+```
+
 ## Running
 
 ```
