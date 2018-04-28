@@ -10,7 +10,7 @@ Tokyo Telegram Bot
 
 # Contents
 
-## [Questions](quistions.json)
+## [questions for dialog with bot](questions.json)
 ```
 // Tokyo-bot questions
 // https://github.com/Onther-Tech/tokyo-schema을 기준으로 만들어짐
@@ -127,11 +127,18 @@ Tokyo Telegram Bot
 
 ## Install
 
+```
 $ npm install
+```
 
 ## Running
 
+```
 $ node test.js
+```
+
+## Reference
+* https://github.com/SerjoPepper/delorean_bot/blob/master/src/bot.js
 
 ## etc..
 
