@@ -138,7 +138,10 @@ $ node test.js
 ```
 
 ## Reference
-* https://github.com/SerjoPepper/delorean_bot/blob/master/src/bot.js
+* [Bot-brother](https://github.com/SerjoPepper/bot-brother)
+* [Bot source code reference](https://github.com/SerjoPepper/delorean_bot/blob/master/src/bot.js)
+
+* [Tokyo Schema](https://github.com/Onther-Tech/tokyo/tree/master/packages/tokyo-schema)
 
 ## etc..
 
