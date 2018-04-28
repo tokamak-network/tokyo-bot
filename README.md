@@ -127,7 +127,11 @@ Tokyo Telegram Bot
 
 ## Install
 
+$ npm install
+
 ## Running
+
+$ node test.js
 
 ## etc..
 
