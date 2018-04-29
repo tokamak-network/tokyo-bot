@@ -6,22 +6,25 @@
    ],
    "General":{
       "message":{
-         "triple_dillema":"(a)토큰 발행량, (b)토큰의 사후적 분배율, (c)토큰 판매가의 세 가지가 동시에 정해질 수 없다는 ICO삼위일체불가능성에 대해서 알고 계신가요?",
-         "project_name":"프로젝트 이름은 무엇인가요?(영어로)"
+         "triple_dilemma":"(a)토큰 발행량, (b)토큰의 사후적 분배율, (c)토큰 판매가의 세 가지가 동시에 정해질 수 없다는 ICO삼위일체불가능성에 대해서 알고 계신가요?",
+         "project_name":"프로젝트 이름은 무엇인가요?"
       }
    },
    "Token":{
+     "_comment" : {
+       "not_implemented" : {
+         "no_mint_after_sale":"토큰의 추가 발행이 가능한 토큰(Mintable)"
+        }
+       },
       "message":{
-         "token_type":"토큰의 타입을 선택해주세요",
-         "mintable":"토큰의 추가 발행이 가능한 토큰(Mintable)",
-         "minime":"특정 블록높이를 기준으로 잔액 분포를 알 수 있는 토큰(Minime)",
          "token_name":"토큰의 이름은 무엇인가요?",
          "symbol":"토큰의 심볼은 무엇인가요?",
+         "is_minime":"특정 블록높이를 기준으로 잔액 분포를 알 수 있는 토큰(Minime)",
          "decimal":"토큰의 소수점은 몇 번째 자리수까지 인가요?",
          "burnable":"사용자가 본인의 토큰을 태워 없애는 기능이 필요한가요?",
          "pausable":"관리자가 토큰의 전체 전송을 일시정지하는 기능이 필요한가요?",
-         "token_owner_after_ico":"세일이 끝난 후 토큰의 ownership을 가질 지갑 주소를 적어주세요."
-      }
+         "new_owner":"세일이 끝난 후 토큰의 ownership을 가질 지갑 주소를 적어주세요."
+       }
    },
    "Crowdsale":{
       "_comment":[
