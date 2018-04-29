@@ -204,7 +204,8 @@ Tokyo Telegram Bot
 ## Install
 
 ```
-$ npm install
+$ git clone https://github.com/Onther-Tech/tokyo-bot.git
+$ cd tokyo-bot && npm install
 ```
 
 For your test,
