@@ -2,16 +2,18 @@
 
 const config = require('./config.json');
 const TOKEN = config.TOKEN;
+const _q = require('./questions.json');
 
-var bb = require('bot-brother');
+const bb = require('bot-brother');
 
-var bot = bb({
+const bot = bb({
   key: TOKEN,
   sessionManager: bb.sessionManager.memory(),
   polling: { interval: 0, timeout: 1 }
 });
 
-var targetJason = {};
+
+const targetJSON = {};
 
 // Let's create command '/start'.
 bot.command('start')
@@ -19,13 +21,12 @@ bot.command('start')
   // Setting data, data is used in text message templates.
   ctx.data.user = ctx.meta.user;
   console.log(ctx.data);
-  // Invoke callback must return promise.
-  return ctx.sendMessage('안녕하세요 <%=user.first_name%>님. 토큰과 크라우드세일 설문을 시작하겠습니다.');
+  let message = '안녕하세요 <%=user.first_name%>님. 토큰과 크라우드세일 설문을 시작하겠습니다. \n'+_q.q1;
+  return ctx.sendMessage(message);
 })
 .keyboard([
   [{'button.locale': {go: 'settings_locale'}}],
-  [{'button.timezone': {go: 'settings_timezone'}}],
-  'backButton'
+  [{'button.timezone': {go: 'settings_timezone'}}]
 ]);;
 
 // Creating command '/upload_photo'.
