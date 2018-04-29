@@ -40,21 +40,6 @@ Tokyo Telegram Bot
          "new_owner":"세일이 끝난 후 토큰의 ownership을 가질 지갑 주소를 적어주세요."
        }
    },
-   "Crowdsale":{
-      "_comment":[
-         "*****크라우드세일의 도중 오너키가 분실되었을 경우의 문제에 관한 항목 필요*****"
-      ],
-      "message":{
-         "ether_hardcap":"ICO의 하드캡은 몇 이더인가요?",
-         "ether_softcap":"ICO의 소프트캡은 몇 이더인가요?",
-         "start":"ICO의 시작일은 언제인가요?",
-         "end":"ICO의 종료일은 언제인가요?",
-         "base_rate":"기본가격은 얼마인가요?(1이더당 토큰 발행량)",
-         "ether_max_purchase_limit":"1계정당 최대 구매 가능 금액은 얼마인가요?",
-         "ether_min_perchase_limit":"1계정당 최소 구매 가능 금액은 얼마인가요?",
-         "purchase_interval":"토큰 재구매 가능한 블록 간격을 적어주세요"
-      }
-   },
    "Stage":{
       "_comment":[
          "스테이지 : 스테이지란 프리세일, 퍼블릭 세일 등으로 나눠지는 구간을 말한다. 구간과 구간 사이를 멀리 둘 수 있다.",
@@ -74,21 +59,34 @@ Tokyo Telegram Bot
          }
       }
    },
-   "PeriodBonusStage":{
+   "Crowdsale":{
       "_comment":[
-         "m - 총 스테이지",
-         "m_n - m개중 n번째 스테이지",
-         "m_n_x - n번째 스테이지에 있는 총 x개의 가격 보너스 구간",
-         "m_n_x_y - n번재 스테이지에 있는 y번째 가격 보너스 구간"
+         "*****크라우드세일의 도중 오너키가 분실되었을 경우의 문제에 관한 항목 필요*****"
       ],
       "message":{
-         "n_num_stages":"n번째 스테이지에 몇 개의 기간별 보너스 구간이 있나요?",
+         "ether_hardcap":"ICO의 하드캡은 몇 이더인가요?",
+         "ether_softcap":"ICO의 소프트캡은 몇 이더인가요?",
+         "start":"ICO의 시작일은 언제인가요?",
+         "end":"ICO의 종료일은 언제인가요?",
+         "base_rate":"기본가격은 얼마인가요?(1이더당 토큰 발행량)",
+         "ether_max_purchase_limit":"1계정당 최대 구매 가능 금액은 얼마인가요?",
+         "ether_min_perchase_limit":"1계정당 최소 구매 가능 금액은 얼마인가요?",
+         "purchase_interval":"토큰 재구매 가능한 블록 간격을 적어주세요"
+      }
+   },
+   "PeriodBonusStage":{
+      "_comment":[
+         "m - 총 구간 갯수",
+         "m_n - m개중 n번째 구간"
+      ],
+      "message":{
+         "num_bonuses":"몇 개의 기간별 보너스 구간이 있나요?",
          "n_end_time":"n번째 스테이지에 y번째 보너스 구간의 종료 시간을 적어주세요.",
          "n_bonus_rate":"n번째 스테이지에 y번째 보너스 구간의 보너스 퍼센트를 적어주세요.",
          "_comment":{
-            "n_num_stages":"x결정",
-            "n_end_time":"x번 반복",
-            "n_bonus_rate":"x번 반복"
+            "num_bonuses":"m결정",
+            "n_end_time":"m번 반복",
+            "n_bonus_rate":"m번 반복"
          }
       }
    },
@@ -157,7 +155,7 @@ Tokyo Telegram Bot
             "y_eoa_address":"x번 반복(위항과 합쳐서)",
             "n_y_num_release":"i결정",
             "n_y_i_end_time":"i번 반복",
-            "n_y_i_release_ratio":"i번 반복, 총합은 100%"
+            "n_y_i_release_ratio":"i번 반복, 릴리즈 ratio는 누적%"
          }
       }
    },
