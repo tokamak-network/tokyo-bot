@@ -51,6 +51,9 @@ bot.command('General.project_name')
   return ctx.go('Token.token_name');
 });
 
+
+//*************TOKEN START*******************//
+
 //Token.token_name
 bot.command('Token.token_name')
 .invoke( ctx => {
@@ -144,13 +147,29 @@ bot.command('Token.new_owner')
 .answer( ctx => {
   _r.sale.new_token_owner = ctx.answer;
   console.log("*** new owner log ***\n", _r.sale.new_token_owner);
+  return ctx.go('Stage.total_num_stages');
+});
+
+//*************TOKEN END*******************//
+
+//*************STAGE START*******************//
+
+//Stage.total_num_stages
+bot.command('Stage.total_num_stages')
+.invoke( ctx => {
+  let message = _q.Stage.message.total_num_stages;
+  return ctx.sendMessage(message);
+})
+.answer( ctx => {
+  ctx.session.memory = parseInt(ctx.answer);
+  console.log('*** Stage.total_num_stages Log ***\n' ,ctx.session.memory);
   return ctx.go('');
 });
 
 
 //template
 
-
+//
 // bot.command('')
 // .invoke( ctx => {
 //   let message = _q.
@@ -158,7 +177,7 @@ bot.command('Token.new_owner')
 // })
 // .answer( ctx => {
 //   _r.
-//   console.log('*** ***', _r);
+//   console.log('*** ***\n', _r);
 //   return ctx.go('');
 // });
 
