@@ -27,7 +27,7 @@ Tokyo Telegram Bot
    "Token":{
      "_comment" : {
        "not_implemented" : {
-         "no_mint_after_sale":"토큰의 추가 발행이 가능한 토큰(Mintable)"
+
         }
        },
       "message":{
@@ -37,7 +37,8 @@ Tokyo Telegram Bot
          "decimal":"토큰의 소수점은 몇 번째 자리수까지 인가요?",
          "burnable":"사용자가 본인의 토큰을 태워 없애는 기능이 필요한가요?",
          "pausable":"관리자가 토큰의 전체 전송을 일시정지하는 기능이 필요한가요?",
-         "new_owner":"세일이 끝난 후 토큰의 ownership을 가질 지갑 주소를 적어주세요."
+         "new_owner":"세일이 끝난 후 토큰의 ownership을 가질 지갑 주소를 적어주세요.",
+         "no_mint_after_sale":"세일이 끝난 후 토큰의 추가 발행이 가능한 토큰(Mintable)인가요?"
        }
    },
    "Stage":{
@@ -129,33 +130,29 @@ Tokyo Telegram Bot
    "Locker":{
       "_comment":[
          "Locker for token",
-         "m개의 락커 사용",
-         "n번째 락커",
-         "n_x : n번째 락커로부터 토큰을 받는 총 x개의 계정",
-         "n_x_y : n번째 락커로부터 토큰을 받는 총x개의 계정 중 y번째 계정",
-         "n_x_y_i : n번째 락커로부터 토큰을 받는 총x개의 계정 중 y번째 계정의 i번째 릴리즈 구간"
+         "x : 락커로부터 토큰을 받는 총 x개의 계정",
+         "x_y : 토큰을 받는 총x개의 계정 중 y번째 계정",
+         "x_y_i : 토큰을 받는 총x개의 계정 중 y번째 계정의 i번째 릴리즈 구간"
       ],
       "message":{
          "use_locker":"토큰을 보관해 두었다가 특정 기간에 릴리즈하는 Locker 기능이 필요한가요?",
-         "num_locker":"몇 개의 락커가 필요한가요?",
-         "n_num_owner":"m개의 락커 중 n번째 락커의 토큰을 받을 계정은 몇개인가요?",
+         "x_num_owner":"토큰을 받을 계정은 몇 개인가요?",
          "y_is_multisig":"x개의 계정 중 y번째 계정은 <멀티시그> 인가요 <EOA>인가요?",
-         "y_multisig_num":"(멀티시그라면) n번째 락커에서 y번째 계정으로 쓸 멀티시그 지갑을 선택해주세요",
-         "y_eoa_address":"(EOA라면) n번째 락커에서 y번째 계정으로 쓸 EOA 어카운트를 적어주세요",
-         "n_y_distribution_ratio":"n번 락커의 y번째 계정은 락커가 보유한 토큰의 몇 퍼센트를 가져가나요?",
-         "n_y_release_type":"n번 락커의 y번째 계정의 릴리즈 타입은?(#1 : 계단형, #2 : 선형)",
-         "n_y_num_release":"n번 락커의 y번째 계정은 몇 번의 기간에 걸쳐 릴리즈를 하나요?",
-         "n_y_i_end_time":"n번 락커의 y번째 계정의 i번째 구간의 릴리즈 종료 시간을 설정해주세요",
-         "n_y_i_release_ratio":"n번 락커의 y번째 계정의 i번째 구간의 릴리즈 비율을 설정해 주세요",
+         "y_multisig_num":"(멀티시그라면) y번째 계정으로 쓸 멀티시그 지갑을 선택해주세요",
+         "y_eoa_address":"(EOA라면) y번째 계정으로 쓸 EOA 어카운트를 적어주세요",
+         "y_distribution_ratio":"y번째 계정은 락커가 보유한 토큰의 몇 퍼센트를 가져가나요?",
+         "y_release_type":"y번째 계정의 릴리즈 타입은?(#1 : 계단형, #2 : 선형)",
+         "y_num_release":"y번째 계정은 몇 번에 걸쳐 릴리즈를 하나요?",
+         "y_i_end_time":"y번째 계정의 i번째 구간의 릴리즈 종료 시간을 설정해주세요",
+         "y_i_release_ratio":"y번째 계정의 i번째 구간의 릴리즈 비율을 설정해 주세요",
          "_comment":{
-            "num_locker":"m결정",
-            "m_num_owner":"m번 반복, x결정",
+            "x_num_owner":"x결정",
             "y_is_multisig":"x번 반복",
             "y_multisig_num":"x번 반복(아래항과 합쳐서)",
             "y_eoa_address":"x번 반복(위항과 합쳐서)",
-            "n_y_num_release":"i결정",
-            "n_y_i_end_time":"i번 반복",
-            "n_y_i_release_ratio":"i번 반복, 릴리즈 ratio는 누적%"
+            "y_num_release":"i결정",
+            "y_i_end_time":"i번 반복",
+            "y_i_release_ratio":"i번 반복, 릴리즈 ratio는 누적%"
          }
       }
    },
@@ -168,9 +165,10 @@ Tokyo Telegram Bot
       "message":{
          "crowdsale_token_ratio":"크라우드세일을 통해 판매되는 토큰은 몇 퍼센트 인가요?",
          "num_account_distribution":"크라우드 세일 이외에 토큰이 분배되는 계정의 갯수는 몇개인가요?",
-         "n_account_type":"m개 중 n번째 계정의 종류는 무엇인가요?(락커, EOA)",
-         "n_eoa_address":"(n번째 계정이 EOA일 경우)주소를 입력 해 주세요",
-         "n_multisig_num":"(n번째 계정이 multisig일 경우)번호를 입력 해 주세요",
+         "n_account_type":"m개 중 n번째 계정의 종류는 무엇인가요?(1:EOA, 2:Locker, 3:Multisig)",
+         "n_eoa_address":"(1. n번째 계정이 EOA일 경우)주소를 입력 해 주세요",
+         "n_locker_num":"(2. n번째 계정이 Locker일 경우)번호를 입력 해 주세요",
+         "n_multisig_num":"(3. n번째 계정이 Multisig일 경우)번호를 입력 해 주세요",
          "n_account_ratio":"m개 중 n번째 계정이 전체 토큰 발행량 중 가져가는 비율은?",
          "_comment":{
             "num_account_distribution":"m결정"
